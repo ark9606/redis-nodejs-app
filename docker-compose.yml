@@ -7,7 +7,14 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - redisvol:/data
+      - redisvol:/data/redisdb
+  mongo:
+    image: mongo:7-jammy
+    ports:
+      - 27017:27017
+    volumes:
+      - mongovol:/data/mongodb
 
 volumes:
   redisvol:
+  mongovol:
